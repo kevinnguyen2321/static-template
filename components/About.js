@@ -42,14 +42,33 @@ export default function About() {
     <div className="min-h-screen bg-white">
       {/* Hero Section with Restaurant Image */}
       <section
-        className="relative h-96 bg-cover bg-center"
+        className="relative h-64 md:h-80 lg:h-96 xl:h-[28rem] bg-cover bg-center"
         style={{ backgroundImage: 'url(/restaurant.jpg)' }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">About</h1>
-            <div className="w-24 h-1 bg-white mx-auto"></div>
+      ></section>
+
+      {/* About Content Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">About</h2>
+          <div className="w-24 h-1 bg-gray-900 mx-auto mb-12"></div>
+
+          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <p>
+              We founded Local Gourmet out of a deep love for real food, for
+              food that is fresh, healthy, and authentic. We only use real
+              ingredients here at Local Gourmet. Farm fresh eggs, organic
+              tomatoes, fresh water fish, and free-range beef. We strive to make
+              each and every dish a wholesome expression of our love for food,
+              life, and living.
+            </p>
+
+            <p>
+              The Local Gourmet was born in 1989 as a tiny cafe at the corner of
+              Main Street and 25th Avenue. Over the past two decades, our tiny
+              cafe has blossomed into a thriving restaurant, with indoor and
+              outdoor seating, room for families, parties and even crowds. (Yes,
+              we do catering...just ask us!)
+            </p>
           </div>
         </div>
       </section>
@@ -109,14 +128,14 @@ export default function About() {
             </div>
 
             {/* Chef Image */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-md">
+            <div className="-mx-4 sm:-mx-6 lg:mx-0 lg:flex lg:justify-end">
+              <div className="w-full lg:max-w-md">
                 <Image
-                  src="/chef-cooking.jpg"
+                  src="/chef.jpg"
                   alt="Chef preparing food in the kitchen"
                   width={400}
                   height={500}
-                  className="w-full h-auto object-cover grayscale"
+                  className="w-full h-auto object-cover grayscale lg:rounded-lg"
                   priority
                 />
               </div>
