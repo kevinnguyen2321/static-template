@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const MenuDetails = () => {
   const params = useParams();
@@ -337,13 +338,16 @@ const MenuDetails = () => {
                             >
                               {/* Item Image (only for non-drinks) */}
                               {mealKey !== 'drinks' && (
-                                <div className="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-full overflow-hidden">
-                                  <div
-                                    className="w-full h-full bg-cover bg-center"
-                                    style={{
-                                      backgroundImage: `url(${item.image})`,
-                                    }}
-                                  ></div>
+                                <div className="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-full overflow-hidden relative">
+                                  <Image
+                                    src={item.image}
+                                    alt={item.name}
+                                    fill
+                                    sizes="64px"
+                                    className="object-cover"
+                                    placeholder="blur"
+                                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                                  />
                                 </div>
                               )}
 

@@ -1,27 +1,50 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
   const closeNav = () => setIsNavOpen(false);
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (item) => {
     closeNav();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+
+    if (item.type === 'scroll') {
+      // Check if we're on the home page
+      if (pathname === '/') {
+        // We're on home page, scroll directly
+        const element = document.getElementById(item.sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // We're on a different page, navigate to home first
+        router.push('/');
+        // Use setTimeout to allow navigation to complete before scrolling
+        setTimeout(() => {
+          const element = document.getElementById(item.sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } else if (item.type === 'navigate') {
+      // Navigate to different page
+      router.push(item.path);
     }
   };
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'menu', label: 'Menu' },
-    { id: 'story', label: 'Our Story' },
-    { id: 'hours', label: 'Hours' },
-    { id: 'contact', label: 'Contact' },
+    { type: 'navigate', path: '/', label: 'Home' },
+    { type: 'navigate', path: '/menu/breakfast', label: 'Menu' },
+    { type: 'navigate', path: '/about', label: 'Our Story' },
+    { type: 'scroll', sectionId: 'hours', label: 'Hours' },
+    { type: 'scroll', sectionId: 'contact', label: 'Contact' },
   ];
 
   return (
@@ -42,9 +65,12 @@ export default function Navbar() {
           <div className="text-xs lg:text-sm text-gray-500 mb-1 tracking-wider">
             - EST. 2022 -
           </div>
-          <h1 className="text-xl lg:text-2xl font-bold tracking-widest mb-0">
+          <button
+            onClick={() => handleNavClick({ type: 'navigate', path: '/' })}
+            className="text-xl lg:text-2xl font-bold tracking-widest mb-0 hover:text-gray-600 transition-colors"
+          >
             ROOTS & CO.
-          </h1>
+          </button>
           <div className="text-xs lg:text-sm text-gray-600 tracking-wide">
             LOCAL GOURMET
           </div>
@@ -54,8 +80,8 @@ export default function Navbar() {
         <nav className="hidden lg:flex gap-8 ml-auto">
           {navItems.map((item) => (
             <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              key={item.sectionId || item.path}
+              onClick={() => handleNavClick(item)}
               className="text-gray-800 hover:text-gray-600 transition-colors text-lg"
             >
               {item.label}
@@ -81,9 +107,9 @@ export default function Navbar() {
       >
         <ul className="list-none">
           {navItems.map((item) => (
-            <li className="mb-5" key={item.id}>
+            <li className="mb-5" key={item.sectionId || item.path}>
               <button
-                onClick={() => handleNavClick(item.id)}
+                onClick={() => handleNavClick(item)}
                 className="text-gray-800 text-lg block py-2 border-b border-gray-200 w-full text-left hover:text-gray-600"
               >
                 {item.label}
