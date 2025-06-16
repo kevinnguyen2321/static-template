@@ -49,7 +49,9 @@ export default function About() {
       {/* About Content Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">About</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 font-serif">
+            About
+          </h2>
           <div className="w-24 h-1 bg-gray-900 mx-auto mb-12"></div>
 
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -105,7 +107,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">
                 Local Gourmet
               </h2>
 

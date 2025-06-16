@@ -62,16 +62,16 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="text-center flex-1 lg:flex-none lg:text-left">
-          <div className="text-xs lg:text-sm text-gray-500 mb-1 tracking-wider">
+          <div className="text-xs lg:text-sm text-gray-500 mb-1 tracking-wider font-serif">
             - EST. 2022 -
           </div>
           <button
             onClick={() => handleNavClick({ type: 'navigate', path: '/' })}
-            className="text-xl lg:text-2xl font-bold tracking-widest mb-0 hover:text-gray-600 transition-colors"
+            className="text-xl lg:text-2xl font-bold tracking-widest mb-0 hover:text-gray-600 transition-colors font-serif"
           >
             ROOTS & CO.
           </button>
-          <div className="text-xs lg:text-sm text-gray-600 tracking-wide">
+          <div className="text-xs lg:text-sm text-gray-600 tracking-wide font-serif">
             LOCAL GOURMET
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function Navbar() {
             <button
               key={item.sectionId || item.path}
               onClick={() => handleNavClick(item)}
-              className="text-gray-800 hover:text-gray-600 transition-colors text-lg"
+              className="text-gray-800 hover:text-gray-600 transition-colors text-lg font-serif"
             >
               {item.label}
             </button>
@@ -110,7 +110,7 @@ export default function Navbar() {
             <li className="mb-5" key={item.sectionId || item.path}>
               <button
                 onClick={() => handleNavClick(item)}
-                className="text-gray-800 text-lg block py-2 border-b border-gray-200 w-full text-left hover:text-gray-600"
+                className="text-gray-800 text-lg block py-2 border-b font-serif border-gray-200 w-full text-left hover:text-gray-600 "
               >
                 {item.label}
               </button>

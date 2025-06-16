@@ -8,7 +8,7 @@ export default function OurStory() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-8">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-8">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-8 font-serif">
               Our story
             </h2>
 

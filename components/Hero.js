@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         {/* Welcome Text */}
-        <h2 className="text-lg md:text-xl lg:text-2xl font-normal tracking-wider mb-8 uppercase">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-normal tracking-wider mb-8 uppercase font-serif">
           Welcome to ROOTS & CO.
         </h2>
 
@@ -26,7 +26,7 @@ export default function Hero() {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight mb-16">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight mb-16 font-serif">
           <span className="block">Serving delicious</span>
           <span className="block">local food</span>
         </h1>
