@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         {/* Back to Top Button */}
-        <div className="flex justify-end">
+        <div className="flex justify-end mb-8">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="border-2 border-white p-3 hover:bg-white hover:text-gray-900 transition-colors duration-200"
@@ -107,6 +107,11 @@ export default function Footer() {
               />
             </svg>
           </button>
+        </div>
+
+        {/* Developer Credit */}
+        <div className="text-center text-sm text-gray-400 border-t border-gray-800 pt-4">
+          Developed by Kevin Nguyen
         </div>
       </div>
     </footer>

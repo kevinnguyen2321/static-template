@@ -151,7 +151,6 @@ export default function About() {
         className="relative py-20 bg-cover bg-center"
         style={{ backgroundImage: 'url(/kitchen-background.jpg)' }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Local Ingredients */}

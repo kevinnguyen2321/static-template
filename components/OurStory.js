@@ -24,7 +24,7 @@ export default function OurStory() {
 
             <Link href="/about">
               <button className="border-2 border-gray-900 bg-transparent text-gray-900 px-8 py-3 text-lg font-medium hover:bg-gray-900 hover:text-white transition-colors duration-300">
-                Read More
+                Learn More About Our Story
               </button>
             </Link>
           </div>
